@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Photon.css -->
+    <link rel="stylesheet" href="../../../skin/photon/css/photon.min.css">
+
+    <style>
+        form {
+            padding-right: 1px;
+            padding-left: 1px;
+        }
+
+        .settings-pane {
+            margin: 10px;
+        }
+
+        .settings-window {
+            background-color: #e8e6e8;
+        }
+
+        .label-fix {
+            margin-left: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="window settings-window">
+    <header class="toolbar toolbar-header">
+        <h1 class="title">Add Server</h1>
+    </header>
+    <div class="window-content settings-pane">
+        <div class="pane-group">
+            <div class="pane">
+                <div class="form-group">
+                    <label class="label-fix">Server Name</label><br/>
+                    <label class="label-fix">
+                        <small>A descriptive name for this server.</small>
+                    </label>
+                    <input type="text" class="form-control" id="name-input"
+                           placeholder="Example: Database Server 1">
+                </div>
+                <div class="form-group">
+                    <label class="label-fix">SSH Host or IP Address</label><br/>
+                    <label class="label-fix">
+                        <small>The Hostname or IP address of this server.</small>
+                    </label>
+                    <input type="text" class="form-control" id="host-input" placeholder="Example: 192.168.1.1">
+                </div>
+                <div class="form-group">
+                    <label class="label-fix">SSH Port</label><br/>
+                    <label class="label-fix">
+                        <small>SSH Port to use.</small>
+                    </label>
+                    <input type="text" class="form-control" id="port-input" placeholder="Example: 22">
+                </div>
+                <div class="form-group">
+                    <label class="label-fix">SSH Username</label><br/>
+                    <label class="label-fix">
+                        <small>SSH Username to login with.</small>
+                    </label>
+                    <br/>
+                    <label class="label-fix">
+                        <small>If required, the user should be able to issue 'sudo tail' without a password.</small>
+                    </label>
+                    <input type="text" class="form-control" id="username-input" placeholder="Example: logwatchuser">
+                </div>
+                <div class="form-group">
+                    <label class="label-fix">SSH Private Key File</label><br/>
+                    <label class="label-fix">
+                        <small>Full path to the private key used for SSH authentication.</small>
+                    </label>
+                    <br/>
+                    <input type="text" class="form-control" id="private-ssh-key-input"
+                           placeholder="Example: ~/.ssh/id_rsa" style="width: 300px;">
+                    <button class="btn btn-default" type="button" id="browse-button">
+                        Browse
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+            <button class="btn btn-default" id="cancel-button">
+                Cancel
+            </button>
+
+            <button class="btn btn-primary pull-right" id="add-button">
+                Add
+            </button>
+
+            <button class="btn btn-default pull-right" id="help-button">
+                <span class="icon icon-help-circled icon-text"></span>
+                Help
+            </button>
+        </div>
+    </footer>
+</div>
+</body>
+<script src="add-server.js" type="text/javascript"></script>
+<script>
+  const addServer = new AddServer()
+  addServer.init()
+</script>
+</html>

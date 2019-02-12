@@ -1,0 +1,19 @@
+body {
+    padding: 4px;
+    margin: 0;
+    overflow-x: auto;
+    height: 100%;
+    overflow-wrap: break-word;
+}
+
+.textLine {
+    color: #c7c7c7;
+}
+
+.content {
+    -webkit-user-select: text !important;
+}
+
+.highlighted {
+    color: #9FCA6C !important;
+}

@@ -1,0 +1,26 @@
+.tab-item {
+    cursor: pointer;
+}
+
+.tab-width {
+    max-width: 200px;
+}
+
+.tab-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 10px;
+    padding-left: 25px;
+}
+
+.tab-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: black;
+}
+
+.tab-iframe-hidden {
+    display: none;
+}
