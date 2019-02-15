@@ -10,13 +10,17 @@ class Watch {
 
   async acquireConnection (server, file, onLine) {
     onLine('Connecting to: ' + server.username + '@' + server.host + ', port: ' + server.port + '...')
+
     const connection = new SSH2Promise({
       host: server.host,
       port: server.port,
       username: server.username,
-      privateKey: fs.readFileSync(server.key),
+      privateKey: fs.readFileSync(server.key).toString(),
       reconnect: false,
-      keepaliveInterval: 300
+      keepaliveInterval: 300,
+      debug: (message) => {
+        console.log(message)
+      }
     })
     await connection.connect()
     this.connections[server.host + server.port + server.username + file.path] = connection

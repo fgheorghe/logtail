@@ -3,21 +3,18 @@
   "productName": "LogTail",
   "version": "1.0.0",
   "dependencies": {
-    "electron": "^3.0.8",
-    "sqlite": "^3.0.0",
-    "sqlite3": "^4.0.4",
-    "ssh2": "^0.6.1",
-    "ssh2-promise": "^0.1.2",
-    "font-manager": "^0.3.0"
-  },
-  "devDependencies": {
-    "electron-builder": "^20.34.0",
-    "electron-rebuild": "^1.8.2",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "moment": "^2.22.2",
-    "nw": "^0.34.2-sdk",
-    "standard": "^11.0.1"
+    "electron": "^4.0.5",
+    "electron-builder": "^20.38.5",
+    "electron-rebuild": "^1.8.4",
+    "eslint": "^5.13.0",
+    "eslint-config-standard": "^12.0.0",
+    "font-manager": "^0.3.0",
+    "moment": "^2.24.0",
+    "sqlite": "^3.0.2",
+    "sqlite3": "^4.0.6",
+    "ssh2": "^0.8.2",
+    "ssh2-promise": "^0.1.3",
+    "standard": "^12.0.1"
   },
   "main": "main.js",
   "window": {
@@ -27,7 +24,7 @@
   },
   "chromium-args": "--enable-logging=stderr --enable-node-worker",
   "scripts": {
-    "start": "nw .",
-    "postinstall": "install-app-deps"
+    "start": "electron .",
+    "postinstall": "./node_modules/.bin/electron-rebuild -p -t \"dev,prod,optional\""
   }
 }

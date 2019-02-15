@@ -4,13 +4,12 @@ const Defaults = require('./src/defaults')
 let mainWindow
 
 app.on('ready', () => {
-  var fontManager = require('font-manager')
-  var fonts = fontManager.getAvailableFontsSync()
-  console.dir(fonts)
-
   mainWindow = new BrowserWindow({
     width: 1200,
-    height: 800
+    height: 800,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
 
   if (Defaults.Debug) {
